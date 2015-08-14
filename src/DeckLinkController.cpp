@@ -339,8 +339,8 @@ HRESULT DeckLinkController::VideoInputFrameArrived (/* in */ IDeckLinkVideoInput
     if (!rgbaFrame) {
         rgbaFrame = new VideoFrame(videoFrame->GetWidth(), videoFrame->GetHeight());
     }
-    
-    if (rgbaFrame->lock.tryLock(colorConversionTimeout)) {
+
+    if (rgbaFrame->lock.try_lock_for(std::chrono::milliseconds(colorConversionTimeout))) {
         videoConverter->ConvertFrame(videoFrame, rgbaFrame);
         rgbaFrame->lock.unlock();
     }

@@ -82,7 +82,7 @@ ofPixels& ofxBlackMagic::getColorPixels() {
 //		colorPixOld = false;
         
         if (controller.rgbaFrame) {
-            if (controller.rgbaFrame->lock.tryLock(colorFrameCaptureMode)) {
+            if (controller.rgbaFrame->lock.try_lock_for(std::chrono::milliseconds(colorFrameCaptureMode))) {
                 colorPix = controller.rgbaFrame->getPixelsRef();
                 controller.rgbaFrame->lock.unlock();
                 colorPixOld = false;
