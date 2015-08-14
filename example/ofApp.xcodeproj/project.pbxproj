@@ -420,7 +420,7 @@
 					../../../addons/ofxBlackMagic/libs/DeckLink/src,
 					../../../addons/ofxBlackMagic/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
@@ -460,7 +460,7 @@
 					../../../addons/ofxBlackMagic/libs/DeckLink/src,
 					../../../addons/ofxBlackMagic/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
