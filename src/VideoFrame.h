@@ -26,6 +26,9 @@ private:
     virtual ULONG AddRef () {return 1;}
     virtual ULONG Release () {return 1;}
 
+		const ofPixels& getPixels() const override { return pixels; }
+		ofPixels& getPixels() override { return pixels; }
+
 public:
     
     VideoFrame(long width, long height);
@@ -39,7 +42,8 @@ public:
     int getHeight();
     
     std::timed_mutex lock;
-    
-    unsigned char* getPixels();
+
+		//
+    unsigned char* getPixelsDeprecated();
     ofPixels& getPixelsRef();
 };

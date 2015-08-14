@@ -34,7 +34,7 @@ int VideoFrame::getHeight() {
     return this->pixels.getHeight();
 }
 
-unsigned char* VideoFrame::getPixels() {
+unsigned char* VideoFrame::getPixelsDeprecated() {
     return this->pixels.getPixels();
 }
 
